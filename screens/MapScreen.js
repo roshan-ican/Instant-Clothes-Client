@@ -1,28 +1,43 @@
-import React from "react"
-import { StyleSheet, View, Text } from "react-native"
+import React from "react";
+import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 
-function Map() {
+function Map(props) {
+  const { navigation } = props;
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>
-        Map
-      </Text>
+      <Text style={styles.text}>Map</Text>
+      <TouchableOpacity
+        style={styles.buttonContainer}
+        onPress={() => navigation.popToTop()}
+      >
+        <Text style={styles.buttonText}>Go to Home</Text>
+      </TouchableOpacity>
     </View>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'center',
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "center",
   },
   text: {
     color: "#101010",
     fontSize: 24,
-    fontWeight: "bold"
-  }
-})
+    fontWeight: "bold",
+  },
+  buttonContainer: {
+    backgroundColor: "#222",
+    borderRadius: 5,
+    padding: 10,
+    margin: 20,
+  },
+  buttonText: {
+    fontSize: 24,
+    color: "#fff",
+  },
+});
 
 export default Map;

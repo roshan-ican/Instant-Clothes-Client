@@ -3,44 +3,48 @@ import React from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import { FloatingAction } from "react-native-floating-action";
 
-const MainScreen = (props) => {
-  const {navigation} = props
+const shop = {
+  name: 'Sports Shop',
+  address: 'Pakistan',
+  species: 'men'
+}
+
+function MainScreen(props) {
+  const { navigation } = props;
   return (
     <View style={styles.container}>
-    <Text style={styles.text}>
-      Home Screen
-    </Text>
-    <TouchableOpacity
-    style={styles.buttonContainer}
-    onPress={() => navigation.navigate("User")}>
-      <Text style={styles.buttonText}>Go to UserScreen</Text>
-    </TouchableOpacity>
-  </View>
-  )
-}
+      <Text style={styles.text}>Home Screen</Text>
+      <TouchableOpacity
+        style={styles.buttonContainer}
+        onPress={() => navigation.navigate("User"), {item: character}}>
+        <Text style={styles.buttonText}>Go to UserScreen</Text>
+      </TouchableOpacity>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#ebebeb"
+    backgroundColor: "#ebebeb",
   },
-  text:{
+  text: {
     color: "#101010",
     fontSize: 24,
-    fontWeight: "bold"
+    fontWeight: "bold",
   },
   buttonContainer: {
     backgroundColor: "#222",
     borderRadius: 5,
     padding: 10,
-    margin: 20
+    margin: 20,
   },
   buttonText: {
     fontSize: 20,
     color: "#fff",
-  }
+  },
 });
 
 export default MainScreen;
