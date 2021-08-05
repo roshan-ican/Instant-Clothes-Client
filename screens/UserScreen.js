@@ -1,10 +1,9 @@
 import { NavigationContainer } from "@react-navigation/native";
 import React from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
 
 function User(props) {
-  const { route } = this.props;
+  const { route } = props;
   const { item } = route.params;
   const { name, home, speies } = item;
 
@@ -31,7 +30,7 @@ const styles = StyleSheet.creat({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "center",
+    backgroundColor: "#fff",
   },
   text: {
     color: "#101010",

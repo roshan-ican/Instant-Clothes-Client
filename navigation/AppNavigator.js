@@ -4,7 +4,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialIcons } from "@expo/vector-icons";
 
-import MainScreen from "../screens/MainScreen";
+import Home from "../screens/HomeScreen";
 import Map from "../screens/MapScreen";
 import User from "../screens/UserScreen";
 import Card from "../screens/Card";
@@ -32,13 +32,13 @@ function MainStackNavigator() {
       >
         <Stack.Screen
           name="Home"
-          component={MainScreen}
-          options={({ route }) => ({ title: route.params.item.name })}
+          component={Home}
+          options={{ title: "Home Screen" }}
         />
         <Stack.Screen
           name="Map"
           component={Map}
-          options={{ title: "Map Screen" }}
+          options={({ route }) => ({ title: route.params.item.name })}
         />
         <Stack.Screen
           name="User"
