@@ -5,7 +5,7 @@ import { FloatingAction } from "react-native-floating-action";
 
 const shop = {
   name: "Sports Shop",
-  address: "Pakistan",
+  home: "Pakistan",
   species: "men",
 };
 
@@ -16,9 +16,9 @@ function Home(props) {
       <Text style={styles.text}>Home Screen</Text>
       <TouchableOpacity
         style={styles.buttonContainer}
-        onPress={(() => navigation.navigate("User"), { item: shop })}
+        onPress={() => navigation.navigate("User", { item: shop })}
       >
-        <Text style={styles.buttonText}>Go to UserScreen</Text>
+        <Text style={styles.buttonText}>Where is the shop ?</Text>
       </TouchableOpacity>
     </View>
   );

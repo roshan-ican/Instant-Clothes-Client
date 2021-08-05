@@ -1,23 +1,21 @@
-import { NavigationContainer } from "@react-navigation/native";
 import React from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 
 function User(props) {
-  const { route } = props;
+  const { route, navigation } = props;
   const { item } = route.params;
-  const { name, home, speies } = item;
-
+  const { name, home, species } = item;
   return (
     <View style={styles.container}>
       <Text style={styles.text}>User Screen</Text>
       <View style={styles.card}>
         <Text style={styles.cardText}>Name: {name}</Text>
         <Text style={styles.cardText}>Address: {home}</Text>
-        <Text style={styles.cardText}>Species: {speies}</Text>
+        <Text style={styles.cardText}>Species: {species}</Text>
       </View>
       <TouchableOpacity
         style={styles.buttonContainer}
-        onPress={() => Navigation.navigate("Map")}
+        onPress={() => navigation.navigate("Map")}
       >
         <Text style={styles.buttonText}>Go to map</Text>
       </TouchableOpacity>
@@ -25,7 +23,7 @@ function User(props) {
   );
 }
 
-const styles = StyleSheet.creat({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",

@@ -36,15 +36,11 @@ function MainStackNavigator() {
           options={{ title: "Home Screen" }}
         />
         <Stack.Screen
-          name="Map"
-          component={Map}
-          options={({ route }) => ({ title: route.params.item.name })}
-        />
-        <Stack.Screen
           name="User"
           component={User}
-          options={{ title: "User Screen" }}
+          options={{ title: "User screen" }}
         />
+        <Stack.Screen name="Map" component={Map} options={{ title: "Map" }} />
         <Stack.Screen
           name="Card"
           component={Card}
