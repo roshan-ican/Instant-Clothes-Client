@@ -10,7 +10,7 @@ import React from "react";
 
 const Card = (props) => {
   return (
-    <TouchableOpacity onPress={() => props.navigation.navigate("HomeDetails")}>
+    <TouchableOpacity onPress={() => props.navigation.navigate()}>
       <View style={styles.card}>
         <View style={styles.titleContainer}>
           <Text style={styles.title}>Sports shop</Text>
