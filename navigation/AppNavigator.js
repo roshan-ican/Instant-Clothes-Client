@@ -4,10 +4,9 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialIcons } from "@expo/vector-icons";
 
-import Home from "../screens/HomeScreen";
-import Map from "../screens/MapScreen";
-import User from "../screens/UserScreen";
-import Card from "../screens/Card";
+import Home from "../screens/Home/HomeScreen";
+import Map from "../screens/Map/MapScreen";
+import User from "../screens/User/UserScreen";
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -25,7 +24,7 @@ function MainStackNavigator() {
           headerTitleStyle: {
             fontWeight: "bold",
           },
-          headerTintColor: "ffd700",
+          headerTintColor: "#ffd700",
           headerBackTitleVisible: false,
         }}
         headerMode="float"
@@ -41,11 +40,6 @@ function MainStackNavigator() {
           options={{ title: "User screen" }}
         />
         <Stack.Screen name="Map" component={Map} options={{ title: "Map" }} />
-        <Stack.Screen
-          name="Card"
-          component={Card}
-          options={{ title: "Card Screen" }}
-        />
       </Stack.Navigator>
     </NavigationContainer>
   );
