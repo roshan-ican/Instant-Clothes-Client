@@ -1,46 +1,56 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { MaterialIcons } from "@expo/vector-icons";
+import Icon from "react-native-vector-icons/FontAwesome5";
 
-import Home from "../screens/Home/HomeScreen";
-import Map from "../screens/Map/MapScreen";
-import User from "../screens/User/UserScreen";
+import HomeStack from "./HomeStack";
+import UserStack from "./UserStack";
+import MapStack from "./MapStack";
 
-const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 function MainStackNavigator() {
   return (
     <NavigationContainer>
-      <Stack.Navigator
-        initialRouteName="Home"
-        screenOptions={{
-          gestureEnabled: true,
-          headerStyle: {
-            backgroudColor: "#1010101",
+      <Tab.Navigator
+        tabBarOptions={{
+          showLabel: false,
+          keyboardHidesTabBar: true,
+          tabStyle: {
+            backgroundColor: "#384259",
           },
-          headerTitleStyle: {
-            fontWeight: "bold",
-          },
-          headerTintColor: "#ffd700",
-          headerBackTitleVisible: false,
+          activeTintColor: "#CCA8E9",
+          inactiveTintColor: "#CADEFC",
         }}
-        headerMode="float"
       >
-        <Stack.Screen
-          name="Home"
-          component={Home}
-          options={{ title: "Home Screen" }}
+        <Tab.Screen
+          name="homeStack"
+          component={HomeStack}
+          options={{
+            tabBarIcon: ({ color }) => (
+              <Icon name="tshirt" color={color} size={30} />
+            ),
+          }}
         />
-        <Stack.Screen
-          name="User"
-          component={User}
-          options={{ title: "User screen" }}
+        <Tab.Screen
+          name="mapStack"
+          component={MapStack}
+          options={{
+            tabBarIcon: ({ color }) => (
+              <Icon name="map" color={color} size={30} />
+            ),
+          }}
         />
-        <Stack.Screen name="Map" component={Map} options={{ title: "Map" }} />
-      </Stack.Navigator>
+        <Tab.Screen
+          name="userStack"
+          component={UserStack}
+          options={{
+            tabBarIcon: ({ color }) => (
+              <Icon name="user" color={color} size={30} />
+            ),
+          }}
+        />
+      </Tab.Navigator>
     </NavigationContainer>
   );
 }

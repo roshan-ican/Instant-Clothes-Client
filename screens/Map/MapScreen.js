@@ -1,43 +1,20 @@
 import React from "react";
-import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
+import MapView from "../../components/MapView";
 
-function Map(props) {
-  const { navigation } = props;
+const MapScreen = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Map</Text>
-      <TouchableOpacity
-        style={styles.buttonContainer}
-        onPress={() => navigation.popToTop()}
-      >
-        <Text style={styles.buttonText}>Go to Home</Text>
-      </TouchableOpacity>
-    </View>
+    <MapView
+      initialRegion={{
+        latitude: 32.51922279320279,
+        longitude: 74.51706916093826,
+        latitudeDelta: 0.007,
+        longitudeDelta: 0.007,
+      }}
+    />
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "center",
-  },
-  text: {
-    color: "#101010",
-    fontSize: 24,
-    fontWeight: "bold",
-  },
-  buttonContainer: {
-    backgroundColor: "#222",
-    borderRadius: 5,
-    padding: 10,
-    margin: 20,
-  },
-  buttonText: {
-    fontSize: 24,
-    color: "#fff",
-  },
-});
+export default MapScreen;
 
-export default Map;
+const styles = StyleSheet.create({});
