@@ -5,7 +5,6 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-
 import React from "react";
 
 const Card = (props) => {
