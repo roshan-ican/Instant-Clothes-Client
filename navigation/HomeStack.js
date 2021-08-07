@@ -13,7 +13,13 @@ const HomeStack = () => {
         },
       }}
     >
-      <Stack.Screen name="home" component={HomeScreen} />
+      <Stack.Screen
+        name="home"
+        component={HomeScreen}
+        options={{
+          headerTitle: "instant cloths logo",
+        }}
+      />
     </Stack.Navigator>
   );
 };
