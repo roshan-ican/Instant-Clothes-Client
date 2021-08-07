@@ -25,8 +25,6 @@ const UserScreen = () => {
   );
 };
 
-export default UserScreen;
-
 const styles = StyleSheet.create({
   header: {
     backgroundColor: "#00BFFF",
@@ -89,3 +87,4 @@ const styles = StyleSheet.create({
     backgroundColor: "#00BFFF",
   },
 });
+export default UserScreen;
