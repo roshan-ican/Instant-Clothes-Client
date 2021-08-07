@@ -5,7 +5,6 @@ const UserScreen = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}></View>
-      <Image style={styles.avatar} />
       <View style={styles.body}>
         <Text style={styles.name}>User Name</Text>
         <View style={styles.infoContainer}>
@@ -29,17 +28,6 @@ const styles = StyleSheet.create({
   header: {
     backgroundColor: "#00BFFF",
     height: 200,
-  },
-  avatar: {
-    width: 130,
-    height: 130,
-    borderRadius: 63,
-    borderWidth: 4,
-    borderColor: "white",
-    marginBottom: 10,
-    alignSelf: "center",
-    position: "absolute",
-    marginTop: 130,
   },
   name: {
     fontSize: 22,
