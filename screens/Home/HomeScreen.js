@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
     fontFamily: "PaletteMosaic",
     fontSize: 23,
     textAlign: "center",
-    color: "pink",
+    color: "orange",
     marginTop: 3,
   },
 });
