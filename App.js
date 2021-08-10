@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import AppLoading from "expo-app-loading";
 import MainStackNavigator from "./navigation/AppNavigator";
 import * as Font from "expo-font";
+import { NativeBaseProvider } from "native-base";
 
 const loadFonts = () => {
   return Font.loadAsync({
@@ -26,5 +27,9 @@ export default function App() {
       />
     );
   }
-  return <MainStackNavigator />;
+  return (
+    <NativeBaseProvider>
+      <MainStackNavigator />
+    </NativeBaseProvider>
+  );
 }
