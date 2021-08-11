@@ -1,10 +1,16 @@
 import React from "react";
+import styled from "styled-components/native";
 import { StyleSheet, Text, View } from "react-native";
+
+const Title = styled.Text`
+  padding: 16px;
+  font-weight: "bold";
+`;
 
 const CartScreen = () => {
   return (
     <View>
-      <Text>Cart</Text>
+      <Title>Cart</Title>
     </View>
   );
 };

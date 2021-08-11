@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components/native";
 import { StyleSheet, Text, Image, View, TouchableOpacity } from "react-native";
 
 const UserScreen = () => {
@@ -6,14 +7,14 @@ const UserScreen = () => {
     <View style={styles.container}>
       <View style={styles.header}></View>
       <View style={styles.body}>
-        <Text style={styles.name}>User Name</Text>
-        <View style={styles.infoContainer}>
+        <Text>User Name</Text>
+        <View>
           <Text>User Name</Text>
         </View>
-        <View style={styles.infoContainer}>
+        <View>
           <Text>Phone</Text>
         </View>
-        <View style={styles.infoContainer}>
+        <View>
           <Text>Email</Text>
         </View>
         <TouchableOpacity style={styles.infoContainer}>
