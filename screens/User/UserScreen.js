@@ -1,27 +1,70 @@
 import React from "react";
-import styled from "styled-components/native";
-import { StyleSheet, Text, Image, View, TouchableOpacity } from "react-native";
+import styled, { css } from "styled-components/native";
+import {
+  StyleSheet,
+  Text,
+  Image,
+  View,
+  TouchableOpacity,
+  Button,
+} from "react-native";
+
+const Container = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  background-color: papayawhip;
+`;
+const Title = styled.Text`
+  font-size: 22px;
+  color: palevioletred;
+  font-weight: 500;
+`;
+const ButtonContainer = styled.TouchableOpacity`
+	width: 100px;
+  
+	height: 40px
+	padding: 12px;
+	border-radius: 10px;	
+	background-color: ${(props) => props.backgroundColor};
+`;
+
+const ButtonText = styled.Text`
+  font-size: 20px;
+  color: ${(props) => props.textColor};
+  text-align: center;
+`;
+
+const CustomButton = (props) => (
+  <ButtonContainer
+    onPress={() => alert("Hi, No Orders now")}
+    backgroundColor={props.backgroundColor}
+  >
+    <ButtonText textColor={props.textColor}>{props.text}</ButtonText>
+  </ButtonContainer>
+);
 
 const UserScreen = () => {
   return (
-    <View style={styles.container}>
-      <View style={styles.header}></View>
-      <View style={styles.body}>
-        <Text>User Name</Text>
-        <View>
-          <Text>User Name</Text>
-        </View>
-        <View>
-          <Text>Phone</Text>
-        </View>
-        <View>
-          <Text>Email</Text>
-        </View>
-        <TouchableOpacity style={styles.infoContainer}>
-          <Text>Orders</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
+    <>
+      <Container>
+        <Title>User Name</Title>
+      </Container>
+      <Container>
+        <Title>Email</Title>
+      </Container>
+      <Container>
+        <Title>Phone</Title>
+      </Container>
+      <Container>
+        <Title>Address</Title>
+        <CustomButton
+          text="Orders"
+          textColor="#01d1e5"
+          backgroundColor="lavenderblush"
+        />
+      </Container>
+    </>
   );
 };
 
