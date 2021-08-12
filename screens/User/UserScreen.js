@@ -1,5 +1,4 @@
 import React from "react";
-import styled, { css } from "styled-components/native";
 import { StyleSheet, View, SafeAreaView, Button } from "react-native";
 import {
   Avatar,
@@ -11,9 +10,8 @@ import {
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 import Share from "react-native-share";
-import { style } from "styled-system";
 
-const UserScreen = () => {
+const UserScreen = (props) => {
   const myCustomShare = async () => {
     const shareOptions = {
       message:
