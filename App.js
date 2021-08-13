@@ -4,8 +4,6 @@ import AppLoading from "expo-app-loading";
 import MainStackNavigator from "./navigation/AppNavigator";
 import * as Font from "expo-font";
 import { NativeBaseProvider } from "native-base";
-import Share from "react-native-share";
-
 
 const loadFonts = () => {
   return Font.loadAsync({

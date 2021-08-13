@@ -6,9 +6,13 @@ import {
   Dimensions,
   ImageBackground,
   ScrollView,
+  FlatList,
 } from "react-native";
 import { Input, Icon } from "native-base";
 import { Ionicons } from "@expo/vector-icons";
+import Banner from "../../components/Banner";
+import ProductData from "../../data/Product.json";
+import ProductCard from "../../components/ProductCard";
 
 const { height, width } = Dimensions.get("window");
 import styled from "styled-components/native";
@@ -46,7 +50,7 @@ const HomeScreen = () => {
       style={{ flex: 1 }}
       source={require("../../assets/imageBackground.jpg")}
     >
-      <ScrollView style={styles.main}>
+      <ScrollView showsVerticalScrollIndicator={false} style={styles.main}>
         <View style={styles.mainTextView}>
           <Text style={styles.mainGreeting}>Welcome, Ibrahim</Text>
           <Text style={styles.mainText}>
@@ -74,6 +78,62 @@ const HomeScreen = () => {
             }
           />
         </Search>
+        <View
+          style={{
+            marginTop: 10,
+          }}
+        >
+          <Banner />
+        </View>
+        <View
+          style={{
+            alignItems: "center",
+          }}
+        >
+          <Text
+            style={{
+              fontFamily: "PaletteMosaic",
+              fontSize: 30,
+              margin: 14,
+              color: "#c490e4",
+            }}
+          >
+            Featured Products
+          </Text>
+        </View>
+        <View>
+          <View style={styles.list}>
+            {ProductData.map((item) => (
+              <View
+                style={{ width: "50%" }}
+                key={Math.random * Math.random * Math.random}
+              >
+                <ProductCard
+                  image={item.image}
+                  name={item.name}
+                  price={item.price}
+                  countInStock={item.countInStock}
+                />
+              </View>
+            ))}
+          </View>
+          {/* <FlatList
+            data={ProductData}
+            key={(item) => item.id}
+            horizontal={false}
+            numColumns={2}
+            renderItem={({ item }) => (
+              <View style={{ width: width / 2 }}>
+                <ProductCard
+                  image={item.image}
+                  name={item.name}
+                  price={item.price}
+                  countInStock={item.countInStock}
+                />
+              </View>
+            )}
+          /> */}
+        </View>
       </ScrollView>
     </ImageBackground>
   );
@@ -96,6 +156,14 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: "#c490e4",
     marginTop: 3,
+  },
+  list: {
+    height: height * 2.3,
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "flex-start",
+    flexWrap: "wrap",
+    backgroundColor: "transparent",
   },
 });
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View, SafeAreaView, Button } from "react-native";
+import { StyleSheet, View, SafeAreaView, Button, Share } from "react-native";
 import {
   Avatar,
   Title,
@@ -9,17 +9,18 @@ import {
 } from "react-native-paper";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
-import Share from "react-native-share";
+// import Share from "react-native-share";
 
 const UserScreen = (props) => {
   const myCustomShare = async () => {
     const shareOptions = {
       message:
         "Order your clothes from FoodFinder App. I've already ordered more than 10 meals on it.",
-      url: files.appLogo,
+      // url: files.appLogo, url is not okay
     };
+
     try {
-      const ShareResponse = await Share.open(shareOptions);
+      const ShareResponse = await Share.share(shareOptions);
       console.log(JSON.stringify(ShareResponse));
     } catch (error) {
       console.log("Error => ", error);
@@ -49,7 +50,7 @@ const UserScreen = (props) => {
         <View style={styles.row}>
           <Icon name="map-marker-radius" color="#777777" size={20} />
           <Text style={{ color: "#777777", marginLeft: 20 }}>
-            Sikkim, India{" "}
+            Sikkim, India
           </Text>
         </View>
         <View style={styles.row}>
@@ -84,13 +85,13 @@ const UserScreen = (props) => {
         </View>
       </View>
       <View style={styles.menuWrapper}>
-        <TouchableRipple onPress={() => {}}>
+        <TouchableRipple onPress={() => console.log("hello")}>
           <View>
             <Icon name="heart-outline" color="#ff6347" size={25} />
             <Text style={styles.menuItemText}>Favourites</Text>
           </View>
         </TouchableRipple>
-        <TouchableRipple onPress={() => {}}>
+        <TouchableRipple onPress={() => console.log("hello")}>
           <View style={styles.menuItem}>
             <Icon name="credit-card" color="#FF6347" size={25} />
             <Text style={styles.menuItemText}>Payment</Text>
@@ -102,13 +103,13 @@ const UserScreen = (props) => {
             <Text style={styles.menuItemText}>Tell Your Friends</Text>
           </View>
         </TouchableRipple>
-        <TouchableRipple onPress={() => {}}>
+        <TouchableRipple onPress={() => console.log("hello")}>
           <View style={styles.menuItem}>
             <Icon name="account-check-outline" color="#FF6347" size={25} />
             <Text style={styles.menuItemText}>Support</Text>
           </View>
         </TouchableRipple>
-        <TouchableRipple onPress={() => {}}>
+        <TouchableRipple onPress={() => console.log("hello")}>
           <View style={styles.menuItem}>
             <Icon name="settings-outline" color="#FF6347" size={25} />
             <Text style={styles.menuItemText}>Settings</Text>
