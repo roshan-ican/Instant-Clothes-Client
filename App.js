@@ -4,20 +4,9 @@ import AppLoading from "expo-app-loading";
 import MainStackNavigator from "./navigation/AppNavigator";
 import * as Font from "expo-font";
 import { NativeBaseProvider } from "native-base";
-import { name as appName } from "./app.json";
 import { Provider } from "react-redux";
-import {connect} from 'react-redux'
-import { changeCount } from "./redux/actions/counts";
-import {bindActionCreators} from 'redux';
 
-import configureStore from "./redux/store";
-const store = configureStore();
-
-const RNRedux = () => (
-  <Provider store={store}>
-    <App />
-  </Provider>
-);
+import store from "./redux/store";
 
 const loadFonts = () => {
   return Font.loadAsync({
@@ -42,10 +31,10 @@ export default function App() {
     );
   }
   return (
-    <NativeBaseProvider>
-      <MainStackNavigator />
-    </NativeBaseProvider>
+    <Provider store={store}>
+      <NativeBaseProvider>
+        <MainStackNavigator />
+      </NativeBaseProvider>
+    </Provider>
   );
 }
-
-AppRegistry.registerComponent(appName, () => RNRedux);

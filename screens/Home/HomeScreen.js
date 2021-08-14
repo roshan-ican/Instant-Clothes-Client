@@ -104,10 +104,7 @@ const HomeScreen = () => {
         <View>
           <View style={styles.list}>
             {ProductData.map((item) => (
-              <View
-                style={{ width: "50%" }}
-                key={Math.random * Math.random * Math.random}
-              >
+              <View style={{ width: "50%" }}>
                 <ProductCard
                   image={item.image}
                   name={item.name}
