@@ -47,7 +47,7 @@ function MainStackNavigator() {
           component={UserStack}
           options={{
             tabBarIcon: ({ color }) => (
-              <Icon name="user" color={color} size={30} />
+              <Icon name="user" color={color} size={30} />    
             ),
           }}
         />
