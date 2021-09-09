@@ -39,9 +39,9 @@ const UserScreen = (props) => {
           />
           <View style={{ marginLeft: 20 }}>
             <Title style={[styles.title, { marginTop: 15, marginBottom: 5 }]}>
-              Ibrahim
+              Roshan
             </Title>
-            <Caption style={styles.caption}>@ibrahim</Caption>
+            <Caption style={styles.caption}>roshan@gmail.com</Caption>
           </View>
         </View>
       </View>

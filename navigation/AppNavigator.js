@@ -6,7 +6,6 @@ import Icon from "react-native-vector-icons/FontAwesome5";
 import HomeStack from "./HomeStack";
 import UserStack from "./UserStack";
 import MapStack from "./MapStack";
-import SignUpStack from "./SignUpStack";
 
 const Tab = createBottomTabNavigator();
 
@@ -51,7 +50,6 @@ function MainStackNavigator() {
             ),
           }}
         />
-        <Tab.Screen name="SignUpStack" component={SignUpStack} />
       </Tab.Navigator>
     </NavigationContainer>
   );
