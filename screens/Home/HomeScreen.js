@@ -8,10 +8,17 @@ import {
   ScrollView,
   FlatList,
 } from "react-native";
+import {NavigationContainer} from '@react-navigation/native'
+import {createNativeStackNavigator} from '@react-naivgation/native-stack'
+import {ProductList} from '../shop/productsList'
+import {ProductDetails} from '../shop/ProductDetailsScreen'
+import {Cart} from '../shop/Cart'
+import {CartIcon} from '../shop/CartIcon';
+import {CartProvider} from '../shop/CartContext'
 import { Input, Icon } from "native-base";
 import { Ionicons } from "@expo/vector-icons";
 import Banner from "../../components/Banner";
-import ProductData from "../../data/Product.json";
+import ProductData from "../../data/Product.js";
 import ProductCard from "../../components/ProductCard";
 
 const { height, width } = Dimensions.get("window");
@@ -165,3 +172,31 @@ const styles = StyleSheet.create({
 });
 
 export default HomeScreen;
+
+
+{/* <CartProvider>
+<NavigationContainer>
+  <Stack.Navigator>
+    <Stack.Screen name='Products' component={ProductsList} 
+    options={({ navigation }) => ({
+      title: 'Products',
+      headerTitleStyle: styles.headerTitle,
+      headerRight: () => <CartIcon navigation={navigation}/>
+    })}/>
+    <Stack.Screen name='ProductDetails' component={ProductDetails} 
+    options={({ navigation }) => ({
+      title: 'Product details',
+      headerTitleStyle: styles.headerTitle,
+      headerRight: () => <CartIcon navigation={navigation}/>,
+    })} />
+    <Stack.Screen name='Cart' component={Cart} 
+    options={({ navigation }) => ({
+      title: 'My cart',
+      headerTitleStyle: styles.headerTitle,
+      headerRight: () => <CartIcon navigation={navigation}/>,
+    })} />
+  </Stack.Navigator>
+</NavigationContainer>
+</CartProvider>
+); */}
+// }
