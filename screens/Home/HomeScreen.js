@@ -108,36 +108,8 @@ const HomeScreen = () => {
             Featured Products
           </Text>
         </View>
-        <View>
-          <View style={styles.list}>
-            {ProductData.map((item) => (
-              <View style={{ width: "50%" }}>
-                <ProductCard
-                  image={item.image}
-                  name={item.name}
-                  price={item.price}
-                  countInStock={item.countInStock}
-                />
-              </View>
-            ))}
-          </View>
-          {/* <FlatList
-            data={ProductData}
-            key={(item) => item.id}
-            horizontal={false}
-            numColumns={2}
-            renderItem={({ item }) => (
-              <View style={{ width: width / 2 }}>
-                <ProductCard
-                  image={item.image}
-                  name={item.name}
-                  price={item.price}
-                  countInStock={item.countInStock}
-                />
-              </View>
-            )}
-          /> */}
-        </View>
+        
+       
       </ScrollView>
     </ImageBackground>
   );
